@@ -100,7 +100,7 @@ body::after {
   height: 200vh;
   left: -50%;
   top: -50%;
-  background-image: url(/film.9fdc6f0a.png);
+  background-image: url(film.9fdc6f0a.png);
   opacity: .2;
   -webkit-animation: grain 0.2s steps(6) infinite;
           animation: grain 0.2s steps(6) infinite;
