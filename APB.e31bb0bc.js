@@ -3285,6 +3285,34 @@ var scroll = new _locomotiveScroll.default({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true
 });
+var circleSvg = document.querySelector('svg');
+var btn = document.querySelector('button');
+var mouseX = 0;
+var mouseY = 0; //let intv = 0
+
+window.addEventListener('mousemove', function (event) {
+  // circleSvg.style.top = event.clientY - 45;
+  // circleSvg.style.left = event.clientX - 45;
+  mouseY = event.clientY / 16 - 0 / 16 + 'rem';
+  mouseX = event.clientX / 16 - 0 / 16 + 'rem';
+});
+
+var mouseMove = function mouseMove() {
+  //intv += 1
+  circleSvg.style.top = mouseY;
+  circleSvg.style.left = mouseX; //circleSvg.style.opacity = 1 + Math.sin(intv * .04)
+  //console.log(Math.sin(intv * .04))
+
+  window.requestAnimationFrame(mouseMove);
+};
+
+mouseMove(); // var tl = gsap.timeline({ defaults: { ease: "power2.inOut" } })
+// tl.to(circleSvg, { width: 0, opacity: 0 })
+// tl.to('body, button', { background: 'white' })
+// tl.pause()
+// btn.addEventListener('click', () => {
+//     tl.play()
+// })
 },{"locomotive-scroll":"node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js"}],"../Users/oldma/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -3313,7 +3341,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60517" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50738" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

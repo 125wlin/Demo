@@ -58,7 +58,7 @@ body::after {
   height: 200vh;
   left: -50%;
   top: -50%;
-  background-image: url(/film.9fdc6f0a.png);
+  background-image: url(film.9fdc6f0a.png);
   opacity: 0.2;
   animation: grain 0.2s steps(6) infinite;
 }
