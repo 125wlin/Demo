@@ -24,7 +24,7 @@ body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  cursor: none;
+  cursor: default;
 }
 
 .smooth-scroll-wrapper {
@@ -107,68 +107,68 @@ body::after {
           animation: grain 0.2s steps(6) infinite;
 }
 
+.ccb {
+  top: 1000vw;
+  left: 1000vh;
+  pointer-events: none;
+  position: fixed;
+  z-index: 10000000;
+  -webkit-transition: .5s, top .5s, left .5s;
+  transition: .5s, top .5s, left .5s;
+  -webkit-transition-timing-function: cubic-bezier(0, -0.16, 0, 1);
+          transition-timing-function: cubic-bezier(0, -0.16, 0, 1);
+}
+
+.ccb-fill, .ccb-outline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: .2s, -webkit-filter .6s;
+  transition: .2s, -webkit-filter .6s;
+  transition: .2s, filter .6s;
+  transition: .2s, filter .6s, -webkit-filter .6s;
+}
+
+.ccb-fill {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  opacity: .2;
+}
+
+.ccb-outline {
+  opacity: 0;
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+.ccb.links .ccb-outline {
+  -webkit-filter: blur(0px);
+          filter: blur(0px);
+  opacity: 1 !important;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.ccb.links .ccb-fill {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+  opacity: 0 !important;
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
 .cca {
   top: 1000vw;
   left: 1000vh;
   pointer-events: none;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
   position: fixed;
   z-index: 10000000;
-  -webkit-transition: top .35s,
- left .35s;
-  transition: top .35s,
- left .35s;
-  -webkit-transition-timing-function: cubic-bezier(0.15, 0.56, 0.38, 0.99);
-          transition-timing-function: cubic-bezier(0.15, 0.56, 0.38, 0.99);
-}
-
-@-webkit-keyframes colorRotate {
-  0% {
-    fill: #6666ff !important;
-  }
-  10% {
-    fill: #0099ff !important;
-  }
-  50% {
-    fill: #00ff00 !important;
-  }
-  75% {
-    fill: #ff3399 !important;
-  }
-  100% {
-    fill: #6666ff !important;
-  }
-}
-
-@keyframes colorRotate {
-  0% {
-    fill: #6666ff !important;
-  }
-  10% {
-    fill: #0099ff !important;
-  }
-  50% {
-    fill: #00ff00 !important;
-  }
-  75% {
-    fill: #ff3399 !important;
-  }
-  100% {
-    fill: #6666ff !important;
-  }
-}
-
-.cca circle {
-  fill: #ff3a3a;
-  -webkit-animation: colorRotate 2s infinite !important;
-          animation: colorRotate 2s infinite !important;
-}
-
-.cca.links {
-  -webkit-transform: scale(10);
-          transform: scale(10);
-  position: fixed;
+  -webkit-transition: .5s, top .05s, left .05s;
+  transition: .5s, top .05s, left .05s;
+  -webkit-transition-timing-function: ease-out;
+          transition-timing-function: ease-out;
 }
 
 .fuck-u-windows {

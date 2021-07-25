@@ -3285,22 +3285,29 @@ var scroll = new _locomotiveScroll.default({
   el: document.querySelector('[data-scroll-container]'),
   smooth: true
 });
-var circleSvg = document.querySelector('svg');
+var circleSvg = document.querySelector('.cca');
+var circleSvg2 = document.querySelector('.ccb');
 var btn = document.querySelector('button');
 var mouseX = 0;
-var mouseY = 0; //let intv = 0
+var mouseY = 0;
+var mouseX2 = 0;
+var mouseY2 = 0; //let intv = 0
 
 window.addEventListener('mousemove', function (event) {
   // circleSvg.style.top = event.clientY - 45;
   // circleSvg.style.left = event.clientX - 45;
-  mouseY = event.clientY / 16 - 0 / 16 + 'rem';
-  mouseX = event.clientX / 16 - 0 / 16 + 'rem';
+  mouseY = event.clientY / 16 - 5 / 16 + 'rem';
+  mouseX = event.clientX / 16 - 5 / 16 + 'rem';
+  mouseY2 = event.clientY / 16 - 35 / 16 + 'rem';
+  mouseX2 = event.clientX / 16 - 35 / 16 + 'rem';
 });
 
 var mouseMove = function mouseMove() {
   //intv += 1
   circleSvg.style.top = mouseY;
-  circleSvg.style.left = mouseX; //circleSvg.style.opacity = 1 + Math.sin(intv * .04)
+  circleSvg.style.left = mouseX;
+  circleSvg2.style.top = mouseY2;
+  circleSvg2.style.left = mouseX2; //circleSvg.style.opacity = 1 + Math.sin(intv * .04)
   //console.log(Math.sin(intv * .04))
 
   window.requestAnimationFrame(mouseMove);
@@ -3313,6 +3320,19 @@ mouseMove(); // var tl = gsap.timeline({ defaults: { ease: "power2.inOut" } })
 // btn.addEventListener('click', () => {
 //     tl.play()
 // })
+
+document.querySelectorAll('a, img, .img').forEach(function (item) {
+  return item.addEventListener('mouseover', function (event) {
+    circleSvg.classList.add('links');
+    circleSvg2.classList.add('links');
+  });
+});
+document.querySelectorAll('a, img, .img').forEach(function (item) {
+  return item.addEventListener('mouseleave', function (event) {
+    circleSvg.classList.remove('links');
+    circleSvg2.classList.remove('links');
+  });
+});
 },{"locomotive-scroll":"node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js"}],"../Users/oldma/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -3341,7 +3361,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50738" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54690" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
